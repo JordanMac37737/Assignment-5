@@ -1,23 +1,25 @@
 package Assignment5;
 
+// Import tools that gather current date with given date of birth to determine age
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+//Import scanner that allow user interaction
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-
+// Use date and time formatter for preferred way of typing the date
 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 Scanner input = new Scanner(System.in);
-
+//create variables for name, lastname, age, and birthdate
 String name;
 String lastname;
 int age = 0;
 LocalDate birthdate = null;
-
+//Allow user to type name only with allowed letters both lower case and upper case no numbers
 while(true) {
 System.out.println ("First name: ");
 name = input.nextLine();
@@ -40,10 +42,12 @@ if (lastname.matches("[a-zA-Z]+")) {
 		System.out.println ("Invalid last name, please try again");
 }
 }
-	System.out.println("Hello " + name + " " + lastname + ", please enter you date of birth (MM-DD-YYYY)");
+// print message using given first and last name to prompt user to enter birthdate
+System.out.println("Hello " + name + " " + lastname + ", please enter you date of birth (MM-DD-YYYY)");
 	while (true) {
 		String birth = input.nextLine();
-		
+// Add restrictions for year
+// User can't be oler than 125 and less than 0
 try {
 	birthdate = LocalDate.parse(birth, formatter);
 	LocalDate now = LocalDate.now();
