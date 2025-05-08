@@ -18,7 +18,7 @@ public Person(String name, String lastname, int age, LocalDate birthdate) {
 }	
 		
 public void printInfo() {
-	
+//Insert final text that shows name, last name, age, birthdate, and a final message saying thank you
 	System.out.println("Client: " + name +" "+ lastname);
 	System.out.println("Age: " + age);
 	System.out.println("DOB: " + birthdate);
